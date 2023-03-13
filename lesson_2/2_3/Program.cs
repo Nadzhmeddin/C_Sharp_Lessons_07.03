@@ -2,9 +2,10 @@
 
 int num = new Random().Next (1, 1000);
 
-void MyFunc(int num);
-Console.WriteLine(num);
+void MyFunc(int num)
 {
+Console.WriteLine(num);
+
     if(num%7 == 0 && num%23 == 0)
     {
         Console.WriteLine("Кратно");
@@ -12,7 +13,7 @@ Console.WriteLine(num);
 
     else
     {
-        Console.WriteLine("Не кратно");
+        Console.WriteLine("Не кратно ");
     }
 }
 
