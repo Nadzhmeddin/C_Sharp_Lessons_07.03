@@ -2,15 +2,14 @@
 // и выдаёт таблицу квадратов чисел от 1 до N.
 
 
-void Pow(int N)
-{   
+void Pow(int num)
+{
     int i = 1;
-    while (i <= N)
+    while (i <= num)
     {
         Console.WriteLine(Math.Pow(i,2));
         i++;
     }
 }
-
-int N = int.Parse(Console.ReadLine()!);
-Pow(N);
+int number = int.Parse(Console.ReadLine()!);
+Pow(number);
