@@ -1,35 +1,23 @@
-﻿// Напишите программу, которая по заданному номеру четверти, показывает диапазон 
-// возможных координат точек в этой четверти (x и y)
+﻿// Напишите программу, которая принимает на вход координаты двух точек
+// и находит расстояние между ними в 2D пространстве.
 
-Quarter();
-void Quarter()
+Console.Write("x1 = ");
+int x1 = int.Parse(Console.ReadLine()!);
+
+Console.Write("y1 = ");
+int y1 = int.Parse(Console.ReadLine()!);
+
+Console.Write("x2 = ");
+int x2 = int.Parse(Console.ReadLine()!);
+
+Console.Write("y2 = ");
+int y2 = int.Parse(Console.ReadLine()!);
+
+double length (int x1, int y1, int x2, int y2)
 {
-    Console.WriteLine(" Введите номер четверти ");
-    int q = int.Parse(Console.ReadLine()!);
-    if (q < 1 || q > 4)
-    {
-        Console.WriteLine("Нет такой четверти");
-    }
-    else
-    {
-        switch(q)
-        {
-            case 1:
-                Console.WriteLine("x > 0, y > 0");
-                break;
-            case 2:
-                Console.WriteLine("x < 0 , y > 0");
-                break;
-            case 3:
-                Console.WriteLine("x < 0 , y < 0");
-                break;
-            case 4:
-                Console.WriteLine("x > 0, y < 0");
-                break;
-            default:
-                Console.WriteLine("Нет больше четвертей");
-                break;
-        }
-    }
-    
+    return Math.Round(Math.Sqrt(Math.Pow(x2-x1,2)+Math.Pow(y2-y1,2)),3);
 }
+Console.Write(length(x1,y1,x2,y2));
+length(x1,y1,x2,y2);
+
+
