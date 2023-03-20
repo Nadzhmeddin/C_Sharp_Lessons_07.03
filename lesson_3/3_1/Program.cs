@@ -1,20 +1,35 @@
-﻿// Напишите программу, которая принимает на вход координаты точки (X , Y), причём Х не равно 0
-// или Y не равно 0 и выдаёт номер четверти плоскости, в которой находится эта точка.
+﻿// Напишите программу, которая по заданному номеру четверти, показывает диапазон 
+// возможных координат точек в этой четверти (x и y)
 
-void Quarters(int x, int y)
+Quarter();
+void Quarter()
 {
-    if ( x == 0 || y == 0)
-    Console.WriteLine("x = 0, y = 0");
-    else if (x > 0 && y > 0)
-    Console.WriteLine("Первая четверть");
-    else if ( x < 0 && y > 0)
-    Console.WriteLine("Вторая четверть");
-     else if ( x < 0 && y < 0)
-    Console.WriteLine("Третья четверть");
-     else if ( x > 0 && y < 0)
-    Console.WriteLine("Четвертая четверть");
+    Console.WriteLine(" Введите номер четверти ");
+    int q = int.Parse(Console.ReadLine()!);
+    if (q < 1 || q > 4)
+    {
+        Console.WriteLine("Нет такой четверти");
+    }
+    else
+    {
+        switch(q)
+        {
+            case 1:
+                Console.WriteLine("x > 0, y > 0");
+                break;
+            case 2:
+                Console.WriteLine("x < 0 , y > 0");
+                break;
+            case 3:
+                Console.WriteLine("x < 0 , y < 0");
+                break;
+            case 4:
+                Console.WriteLine("x > 0, y < 0");
+                break;
+            default:
+                Console.WriteLine("Нет больше четвертей");
+                break;
+        }
+    }
+    
 }
-
-int num_1 = int.Parse(Console.ReadLine()!);
-int num_2 = int.Parse(Console.ReadLine()!);
-Quarters(num_1 , num_2);
