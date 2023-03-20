@@ -1,21 +1,16 @@
-﻿// Напишите программу, которая принимает на вход координаты двух точек
-// и находит расстояние между ними в 2D пространстве.
+﻿// напишите программу, которая принимает на вход число (N)
+// и выдаёт таблицу квадратов чисел от 1 до N.
 
-Console.Write("x1 = ");
-int x1 = int.Parse(Console.ReadLine()!);
 
-Console.Write("y1 = ");
-int y1 = int.Parse(Console.ReadLine()!);
-
-Console.Write("x2 = ");
-int x2 = int.Parse(Console.ReadLine()!);
-
-Console.Write("y2 = ");
-int y2 = int.Parse(Console.ReadLine()!);
-
-double length (int x1, int y1, int x2, int y2)
-{
-    return Math.Round(Math.Sqrt(Math.Pow(x2-x1,2)+Math.Pow(y2-y1,2)),3);
+void Pow(int N)
+{   
+    int i = 1;
+    while (i <= N)
+    {
+        Console.WriteLine(Math.Pow(i,2));
+        i++;
+    }
 }
-Console.Write(length(x1,y1,x2,y2));
-length(x1,y1,x2,y2);
+
+int N = int.Parse(Console.ReadLine()!);
+Pow(N);
