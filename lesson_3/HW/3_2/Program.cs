@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿// Напишите программу, которая принимает на
 //вход координаты двух точек и находит расстояние между
 //ними в 3D пространстве.
@@ -27,4 +28,7 @@ double length (int x1, int y1, int z1, int x2, int y2, int z2 )
 
 double result = length (x1,y1,z1,x2,y2,z2);
 Console.Write(result);
+=======
+﻿
+>>>>>>> 4_lesson
 
