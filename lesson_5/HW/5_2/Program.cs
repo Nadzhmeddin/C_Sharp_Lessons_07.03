@@ -1,5 +1,5 @@
-﻿// 1. Напишите программу замена элементов массива:
-//положительные элементы замените на соответствующие отрицательные, и наоборот.
+﻿// Задайте одномерный массив, заполненный случайными числами.
+// Найдите сумму элементов, стоящих на нечётных позициях.
 
 
 Console.Write("Кол-во элементов:");
@@ -20,18 +20,20 @@ void PrintArray(int[] arr){
     for (int i=0;i<arr.Length;i++) Console.Write($"{arr[i]} ");
 }
 
+int [] array = MakeArray(count, a, b);
 
-/////////////////////////////////////
 
-void MyFunc (int[] arr){
-    for (int i=0;i<arr.Length;i++){
-        arr[i]*=-1;
-    }
+
+int SumElements (int[] arr)
+{
+    int count = 0;
+    for(int i = 0; i < arr.Length; i += 2)
+        count += arr[i];
+
+    return count;
 }
 
-int[] array=MakeArray(count,a,b);
+
 PrintArray(array);
 Console.WriteLine();
-MyFunc(array);
-PrintArray(array);
-
+Console.WriteLine(SumElements(array));
