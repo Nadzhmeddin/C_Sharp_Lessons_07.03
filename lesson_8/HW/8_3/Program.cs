@@ -26,6 +26,32 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 
+int[,] MatrixProduct (int[,] arr_first, int[,] arr_second)
+{
+    int row_1 = arr_first.GetLength(0);
+    int column_1 = arr_first.GetLength(1);
+
+    int row_2 = arr_second.GetLength(0);
+    int column_2 = arr_second.GetLength(1);
+
+    int[,] pr_matrix = new int[row_1, column_1];
+
+    if(column_1 != row_2) return pr_matrix;
+    else if (column_1 == row_2)
+        pr_matrix = new int[row_1, column_2];
+    
+    for(int i = 0; i < row_1; i++)
+    {
+        for(int j = 0; j < column_2; j++)
+        {
+            for(int k = 0; k < column_1; k++)
+            pr_matrix[i,j] += arr_first[i,k] * arr_second[k,j];
+        }
+    }
+    return pr_matrix;
+}
+
+
 Console.Write("Enter the number of rows: ");
 int row_num = int.Parse(Console.ReadLine()!);
 Console.Write("Enter the number of columns: ");
@@ -39,3 +65,4 @@ int stop = int.Parse(Console.ReadLine()!);
 int[,] mass = MassNums(row_num, column_num, start, stop);
 
 Print(mass);
+MatrixProduct(mass);
