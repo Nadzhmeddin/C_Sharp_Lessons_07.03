@@ -7,13 +7,10 @@ int M = int.Parse(Console.ReadLine()!);
 Console.Write("Введите число N = ");
 int N = int.Parse(Console.ReadLine()!);
 
-static int SumNums(int M, int N)
+int SumNums(int a, int b)
 {
-   if(M==N) return M;
-   else if(M==0) return (N*(N+1))/2;
-   else if(N==0) return (M*(M+1))/2;
-   else if(M>N) return N+SumNums(M,N+1);
-   else return N+SumNums(M,N-1);
+   if(a==b) return a;
+   else return a+ SumNums(a+1,b);
 }
+Console.Write($"Сумма чисел {M} и {N} равна = {SumNums(M,N)}");
 
-Console.WriteLine($"Сумма от {M} до {N} равна {SumNums(M,N)}");
