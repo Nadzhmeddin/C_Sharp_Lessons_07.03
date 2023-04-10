@@ -1,24 +1,17 @@
 ﻿// Задайте значения M и N. Напишите программу, которая выведет 
 // все натуральные числа в промежутке от M до N с помощью рекурсии.
 
+
 Console.Write("Введите число M = ");
 int M = int.Parse(Console.ReadLine()!);
-
 Console.Write("Введите число N = ");
 int N = int.Parse(Console.ReadLine()!);
-EvenNum(M,N);
-Console.WriteLine();
 
-
-void  EvenNum(int a, int b)
+void EvenNums(int a, int b)
 {
-    if(a-1 == b)
-    {
-        return;
-    }
-    EvenNum ((a,b-1)%2==0);
-    Console.Write($"{b} ");
+    if (a > b) return;
+    if (a % 2 == 0 & a > 0) Console.Write($"{a} ");
+    EvenNums(a + 1, b);
 }
 
-EvenNum(M,N);
-Console.WriteLine();
+EvenNums(M,N);
